@@ -1,0 +1,51 @@
+.section {
+    padding-top: 5rem;
+
+    >div {
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        &:first-child {
+            div {
+                margin-bottom: 0;
+            }
+        }
+
+        .detailsSection {
+            display: flex;
+            gap: 2rem;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            >div {
+                flex: 1;
+
+            }
+
+            .content {
+                padding-top: 2rem;
+
+                p {
+                    margin-bottom: 1rem;
+                    font-size: 15px;
+                    color: #000;
+
+                }
+
+                button {
+                    margin: 2rem 0 1rem;
+                }
+            }
+
+            .imgWrapper {
+                img {
+                    box-shadow: 2px 2px 5px #acacac;
+                    padding: 9px;
+                }
+            }
+        }
+    }
+}

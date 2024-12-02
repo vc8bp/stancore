@@ -1,0 +1,40 @@
+.headerSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+    .logoSection {
+        max-width: 75%;
+
+        img {
+            width: auto;
+            height: 5rem;
+            object-fit: cover;
+        }
+    }
+
+    .linkSection {
+        display: flex;
+        gap: 2rem;
+
+        .navLink {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: #333;
+            margin: 5px 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                color: #0070f3;
+            }
+        }
+
+        .active {
+            border-color: #0070f3;
+            color: #0070f3;
+        }
+    }
+
+}
