@@ -31,9 +31,9 @@ const OurPartners = () => {
           <Swiper
             navigation
             pagination={{ type: "bullets", clickable: true }}
-            // autoplay={true}
-            // loop={true}
-            // modules={[Autoplay, Navigation]}
+            autoplay={true}
+            loop={true}
+            modules={[Autoplay, Navigation]}
             slidesPerView={6} // Number of visible slides at once
             spaceBetween={10} // Space between slides
             speed={1000}
