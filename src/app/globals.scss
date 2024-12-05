@@ -8,13 +8,15 @@
   --background: #ffffff;
   --foreground: #171717;
   --color: #851000;
+  --seccolor: #cccccc;
+  --tercolor: #414141;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    
+
   }
 }
 
@@ -23,27 +25,54 @@ body {
   background: var(--background);
   font-family: "Open Sans", sans-serif;
 }
-.ccontainer{
-  width: min(1500px, 90%);
+
+p {
+  font-size: 0.95rem;
+}
+
+.swiper-horizontal{
+  .swiper-button-prev,
+  .swiper-button-next{
+    &::after{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.ccontainer {
+  width: min(1300px, 90%);
   margin: 0 auto;
 }
-.borderline{
+
+.borderline {
   border: 2px solid var(--color);
   width: 9rem;
   margin: 0.8rem 0 2rem;
+
   @media (max-width: 768px) {
     width: 33%;
   }
 }
 
-.button{
+.button {
   background-color: var(--color);
   padding: 0.7rem 1.8rem;
   border-radius: 1.5rem;
-  color:#fff;
+  color: #fff;
   font-size: 0.9rem;
   transition: background-color 1s ease;
-  &:hover{
-      background: #303030;
+
+  &:hover {
+    background: #303030;
   }
+}
+
+
+.title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
 }

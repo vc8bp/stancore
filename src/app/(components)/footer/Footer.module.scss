@@ -1,0 +1,9 @@
+.footerSection{
+    margin-top: 4rem;
+    background: var(--tercolor);
+    padding: 2rem 0;
+    .footerContnet{
+        display: flex;
+        gap: 1.5rem;
+    }
+}

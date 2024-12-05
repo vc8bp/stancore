@@ -1,0 +1,17 @@
+.mainSection {
+    padding-top: 3rem;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+
+    .swiperConatiner {
+        >div {
+         &:first-child {
+                width: 90%;
+                margin: 0 auto;
+                right: 2rem;
+            }
+        }
+    }
+}
