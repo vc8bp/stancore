@@ -24,16 +24,16 @@ const data = [
 
 const OurPartners = () => {
   return (
-    <div className={styles.mainSection}>
+    <div className={`our-partners-section ${styles.mainSection}`}>
       <div className="ccontainer">
         <h1 className="title">Our Partners</h1>
         <div className={styles.container}>
           <Swiper
             navigation
             pagination={{ type: "bullets", clickable: true }}
-            autoplay={true}
-            loop={true}
-            modules={[Autoplay, Navigation]}
+            // autoplay={true}
+            // loop={true}
+            // modules={[Autoplay, Navigation]}
             slidesPerView={6} // Number of visible slides at once
             spaceBetween={10} // Space between slides
             speed={1000}

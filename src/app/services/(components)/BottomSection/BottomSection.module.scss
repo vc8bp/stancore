@@ -1,0 +1,42 @@
+.serviceBottomSection {
+    >div {
+        padding-top: 5rem;
+        @media (max-width: 768px) {
+            padding-top: 4rem;
+        }
+        .contentSection {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            padding-bottom: 5rem;
+            &:nth-child(even){
+                flex-direction: row-reverse;
+                @media (max-width: 768px) {
+                    flex-direction: column-reverse;
+                }
+            }
+            @media (max-width: 768px) {
+                flex-direction: column-reverse;
+                gap: 2rem;
+                padding-bottom: 4rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                font-weight: 400;
+                text-align: start;
+            }
+
+            >div {
+                flex: 1;
+            }
+
+            .imageWrapper {
+                img {
+                    padding: 8px;
+                    box-shadow: 2px 2px 5px #acacac;
+                }
+            }
+        }
+       
+    }
+}

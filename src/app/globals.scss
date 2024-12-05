@@ -41,7 +41,7 @@ p {
 }
 
 .ccontainer {
-  width: min(1300px, 90%);
+  width: min(1350px, 90%);
   margin: 0 auto;
 }
 
@@ -75,4 +75,16 @@ p {
   text-align: center;
   margin-bottom: 1rem;
   text-transform: capitalize;
+}
+
+
+.our-partners-section{
+  .swiper-button-prev{
+    left: 0;
+    width: 1rem;
+  }
+  .swiper-button-next{
+    right: 0;
+    width: 1rem;
+  }
 }

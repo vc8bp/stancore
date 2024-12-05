@@ -1,8 +1,13 @@
 import React from 'react'
+import BottomSection from './(components)/BottomSection/BottomSection'
+import ServicesBanner from './(components)/ServicesBanner/ServicesBanner'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <ServicesBanner/>
+      <BottomSection/>
+    </div>
   )
 }
 

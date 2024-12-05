@@ -1,0 +1,45 @@
+.serviceBanner {
+    padding: 5rem 0;
+    position: relative;
+
+    .bannerImg {
+        background-image: url('../../\(images\)/Stancor-services-banner.jpg');
+        background-position: 50% 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        background-color: inherit;
+        background-size: cover;
+        background-attachment: scroll;
+        pointer-events: none;
+
+        @media (min-width: 1200px) {
+            background-attachment: fixed;
+        }
+    }
+
+    .container {
+        position: relative;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        .content {
+            width: 60%;
+            box-shadow: 0 3px 9px #ccc;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2.7rem;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+            h1 {
+                font-size: 1.8rem;
+                font-weight: 400;
+                text-align: start;
+            }
+        }
+    }
+
+}

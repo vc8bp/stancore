@@ -4,6 +4,10 @@
     justify-content: space-between;
     padding: 0.5rem;
 
+    @media (max-width: 768px) {
+        padding: 0.5rem 0;
+    }
+
     .logoSection {
         max-width: 75%;
 
