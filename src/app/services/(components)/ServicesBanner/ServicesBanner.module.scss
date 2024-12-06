@@ -2,8 +2,8 @@
     padding: 5rem 0;
     position: relative;
 
-    .bannerImg {
-        background-image: url('../../\(images\)/Stancor-services-banner.jpg');
+    .bannerImg,
+    .conatctBannerImg {
         background-position: 50% 0px;
         position: absolute;
         top: 0;
@@ -21,19 +21,32 @@
         }
     }
 
+    .conatctBannerImg {
+        background-image: url('../../../contact-us/\(images\)/contact-us-banner.jpg');
+    }
+
+    .bannerImg {
+        background-image: url('../../\(images\)/Stancor-services-banner.jpg');
+
+    }
+
     .container {
         position: relative;
+
         @media (max-width: 768px) {
             width: 100%;
         }
+
         .content {
             width: 60%;
             box-shadow: 0 3px 9px #ccc;
             background-color: rgba(255, 255, 255, 0.9);
             padding: 2.7rem;
+
             @media (max-width: 768px) {
                 width: 100%;
             }
+
             h1 {
                 font-size: 1.8rem;
                 font-weight: 400;

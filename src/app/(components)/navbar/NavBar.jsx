@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 const data = [
   { title: "home", link: '/', class:"active"},
   { title: "Services", link: '/services' },
+  { title: "Conatct Us", link: '/contact-us' },
 ]
 
 function NavBar() {
