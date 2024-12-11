@@ -1,13 +1,12 @@
 'use client'
-import React from 'react'
-import styles from './Footer.module.scss'
-import Link from 'next/link'
-import { FaFacebookF, FaFacebookSquare, FaInstagram, FaLinkedinIn, FaSearch, FaYoutube } from 'react-icons/fa';
-import { MdCall } from "react-icons/md";
-import { GoMail } from "react-icons/go";
-import { FaXTwitter } from "react-icons/fa6";
-import img1 from './(image)/sectigo_trust_seal_lg_140x54.png'
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaFacebookSquare, FaInstagram, FaLinkedinIn, FaSearch, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+import { GoMail } from "react-icons/go";
+import { MdCall } from "react-icons/md";
+import img1 from './(image)/sectigo_trust_seal_lg_140x54.png';
+import styles from './Footer.module.scss';
 
 
 const footerData = [
@@ -73,7 +72,7 @@ const Footer = () => {
                         </p>
                         <div className={styles.socialLinks}>
                             {socialicons.map(item => {
-                                return <Link href={item.link} target="_blank"><span>{item.icon}</span></Link>
+                                return <Link key={item.link} href={item.link} target="_blank"><span>{item.icon}</span></Link>
                             })}
                         </div>
                     </div>
