@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
 import logo from "@/../public/images/logo.png";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const data = [
   { title: "Home", link: '/', class: "active" },
@@ -27,6 +27,7 @@ function NavBar() {
             R J Enterprise
           </span>
         </a>
+        {/* Mobile Hamburger Button */}
         <button
           onClick={toggleMenu}
           type="button"
@@ -50,6 +51,7 @@ function NavBar() {
             />
           </svg>
         </button>
+        {/* Mobile Sliding Menu */}
         <div
           className={`fixed top-0 right-0 h-full bg-gray-50 dark:bg-gray-800 z-50 transform ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -67,6 +69,21 @@ function NavBar() {
                 <Link
                   href={item.link}
                   className="block py-2 px-3 text-gray-800 bg-blue-100 rounded dark:text-white dark:bg-blue-700"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8">
+          <ul className="flex flex-row font-medium space-x-6">
+            {data.map((item) => (
+              <li key={item.link}>
+                <Link
+                  href={item.link}
+                  className="block py-2 px-3 text-gray-800 hover:text-blue-700 rounded dark:text-white dark:hover:text-blue-500"
                 >
                   {item.title}
                 </Link>
