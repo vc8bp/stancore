@@ -4,7 +4,7 @@ import styles from './AboutUs.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
+//main 
 
 
 const AboutUs = () => {
@@ -16,8 +16,11 @@ const AboutUs = () => {
                     <div className="borderline"></div>
                     <div className={styles.detailsSection}>
                         <div className={styles.content}>
-                            <p>We Stancor are a part of USD 1.5 Billion Stancor Group having presence and strong infrastructure in Oil & Gas, Power Plants, Refineries, Petrochemicals, Pipelines, Pharma, Information Technology, Chemicals & Robotics. Stancor is having presence in over 12 countries with over 1200 employees. Stancor enjoys a strong business relationship with most of the Fortune 500 Companies in All Sectors.Our commitment & dedication to deliver quality product is realized by our professional team of highly qualified Project Sales Engineers, Big Warehousing Facilities, Logistic Experts, Procurement Specialists, and Efficient Coordinating Staff.</p>
-                            <p>Stancor Group is having manufacturing Factories & Distribution Centres, Corporate Offices in India, Africa & Middle East Region. In our journey of 4 decades, we have successfully executed so many projects of national and international significance and are totally conversant with philosophy of highest quality standards. We have strong infrastructure to serve all types of customers in various sectors like Oil & Gas, Power Plants, Refineries, Petrochemicals, Pipelines etc. Our commitment & dedication to deliver quality product is realized by our professional team of highly qualified Project Sales Engineers, Big Warehousing Facilities, Logistic Experts, Procurement Specialists, Information Technology Team and Efficient Coordinating Staff.</p>
+                            <h2>R J Enterprise – Your Trusted Partner in Steel Trading for Over 20 Years</h2>
+                            <p>With more than two decades of experience in the steel industry, R J Enterprise has established itself as a leading name in the steel trading sector. Founded on the principles of quality, reliability, and customer satisfaction, we have built long-lasting relationships with suppliers and clients alike, serving industries across the Nation.</p>
+                            <p>We specialize in sourcing and distributing a wide range of high-quality steel products, including [list specific products like bars, plates, coils, beams, pipes, etc.], catering to various sectors such as construction, Oil & Gas, manufacturing, infrastructure, Power Plants, Petrochemicals, Pipelines, Pharma, automotive, and more. Our extensive network allows us to procure steel from trusted mills worldwide, ensuring that our customers receive the best materials at competitive prices.</p>
+                            <p>What sets us apart is our commitment to excellence at every step. Our team of experts ensures that every product we supply meets the highest industry standards, and our logistics team ensures timely and efficient delivery to locations both near and far.</p>
+                            <p>R J Enterprise is not just a steel supplier, but a dedicated partner in your business success. Whether you are a large corporation or a small enterprise, we are here to provide you with the quality materials and exceptional service you need to thrive in today's compitative market.</p>
                             <button>
                                 <Link target='blank' className='button' href="https://www.stancor.in/profile">Know more</Link>
                             </button>

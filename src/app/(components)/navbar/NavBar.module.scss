@@ -3,42 +3,78 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem;
-
+  
     @media (max-width: 768px) {
-        padding: 0.5rem 0;
+      padding: 0.5rem 0;
     }
-
+  
     .logoSection {
-        max-width: 75%;
-
-        img {
-            width: auto;
-            height: 5rem;
-            object-fit: cover;
-        }
+      max-width: 75%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #ffc53e;
+      font-weight: 600;
+      font-size: 1.3rem;
+      img {
+        width: 50px;
+        object-fit: cover;
+      }
     }
-
+  
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+  
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  
     .linkSection {
-        display: flex;
-        gap: 2rem;
-
+      display: flex;
+      gap: 2rem;
+  
+      .navLink {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: #333;
+        margin: 5px 10px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease, color 0.3s ease;
+  
+        &:hover {
+          color: #0070f3;
+        }
+      }
+  
+      .active {
+        border-color: #0070f3;
+        color: #0070f3;
+      }
+  
+      @media (max-width: 768px) {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        z-index: 1000;
+  
+        &.showMenu {
+          display: flex;
+        }
+  
         .navLink {
-            text-decoration: none;
-            text-transform: capitalize;
-            color: #333;
-            margin: 5px 10px;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
-
-            &:hover {
-                color: #0070f3;
-            }
+          margin: 10px;
+          text-align: center;
         }
-
-        .active {
-            border-color: #0070f3;
-            color: #0070f3;
-        }
+      }
     }
-
-}
+  }
+  

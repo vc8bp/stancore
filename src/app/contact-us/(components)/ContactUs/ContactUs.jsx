@@ -4,6 +4,7 @@ import styles from './ContactUs.module.scss'
 import { FaAddressCard } from 'react-icons/fa'
 import { SlMap } from "react-icons/sl";
 import { GrMail } from "react-icons/gr";
+import Form from './Form';
 
 
 const topdata = [
@@ -13,12 +14,12 @@ const topdata = [
         button: 'Domestic Sales & Marketing Team ',
         url: 'https://www.stancor.in/sales'
     },
-    {
-        title: 'Shipping & Logistics',
-        desc: 'Our Logistics Team is a Dedicated Division for Handling all Logistics related work combining value-added and management services with traditional fulfillment and distribution, our customized, integrated logistics solutions drive efficiency, improve quality and create competitive advantage.',
-        button: 'Shipping & Logistics Team',
-        url: 'https://www.stancor.in/logistics'
-    },
+    // {
+    //     title: 'Shipping & Logistics',
+    //     desc: 'Our Logistics Team is a Dedicated Division for Handling all Logistics related work combining value-added and management services with traditional fulfillment and distribution, our customized, integrated logistics solutions drive efficiency, improve quality and create competitive advantage.',
+    //     button: 'Shipping & Logistics Team',
+    //     url: 'https://www.stancor.in/logistics'
+    // },
     {
         title: 'Export Sales',
         desc: "Stancor Group's Export Sales & Marketing is responsible of Developing and executing marketing campaigns and promotions to drive sales and brand awareness. Monitor and analyze market trends and competition to inform product development and pricing strategies.",
@@ -71,32 +72,9 @@ const ContactUs = () => {
                     })}
                 </div>
 
-                <div className={styles.midSection}>
-                    {features.map((item) => {
-                        return (
-                            <div>
-                                <div className={styles.icon}><SlMap /></div>
-                                <Link href="#">{item.title}</Link>
-                                <p>{item.address}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-
                 <div className={styles.bottomSection}>
                     <div className={styles.leftSection}>
-                        <div className={styles.googlemap}>
-                            <iframe
-                                src="https://maps.google.com/maps?q=390/392, Shankar Mansion, Sardar Vallabhbhai Patel Rd, Girgaon, Mumbai, Maharashtra 400004&t=&z=16&ie=UTF8&width=100%&hl=en&iwloc=&output=embed"
-                                width="600"
-                                height="450"
-                                frameborder="0"
-                                style={{ border: 0 }}
-                                allowfullscreen=""
-                                aria-hidden="false"
-                                tabindex="0"
-                            />
-                        </div>
+                        <Form/>
                     </div>
                     <div className={styles.rightSection}>
                         <h2 className="title">Contact info</h2>
