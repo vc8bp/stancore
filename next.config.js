@@ -6,4 +6,7 @@ module.exports = {
       // !! WARN !!
       ignoreBuildErrors: true,
     },
+    images: {
+      domains: ['via.placeholder.com'], 
+    },
   }

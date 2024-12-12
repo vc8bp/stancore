@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React, { useState } from "react";
 
 const products = [
@@ -6,6 +7,7 @@ const products = [
     name: "Flats",
     sizes: "12x3mm - 300x25mm",
     grade: "Mild Steel",
+    image: "steel-flat-500x500.webp"
   },
   {
     name: "Plates",
@@ -13,32 +15,38 @@ const products = [
     width: "1250mm to 3000mm",
     length: "1mtr. to 12.5mtr.",
     grades: "All grades available as per customer's requirement",
+    image: "wall-form-shuttering-plate-500x500.webp"
   },
   {
     name: "Angle",
     sizes: "25x25x3mm - 150x150x20mm",
     grade: "Mild Steel",
+    image: "shopping.webp"
   },
   {
     name: "Channel",
     sizes: "75x40mm - 400x200mm",
     grade: "Mild Steel",
+    image: "channel 3.jpg",
   },
   {
     name: "Beam",
     sizes: "100x50mm - 600x200mm",
     grade: "Mild Steel",
+    image: "Mild-Steel-I-Beam-1.jpg"
   },
   {
     name: "Round Bar",
     use: "Used for re-rolling into long products, such as deformed bars, angles and profiles.",
     size: "65mm - 150mm",
     grade: "All grades of Carbon and Alloy Mild Steel",
+    image: "Round Bar.jpg"
   },
   {
     name: "Square Bar",
     sizes: "10mm - 50mm",
     grade: "Mild Steel",
+    image: "Square Bar.webp"
   },
   {
     name: "Mild Hot HR Coil",
@@ -46,6 +54,7 @@ const products = [
     width: "900mm to 2000mm",
     length: "As per customer's requirement",
     grades: "All grades available as per customer's requirement",
+    image: "hr coil.jpg"
   },
   {
     name: "BQ Plate",
@@ -53,11 +62,13 @@ const products = [
     width: "1250mm to 2500mm",
     length: "5mtr. to 12mtr.",
     grade: "SA 516 Gr. 60, SA 516 Gr. 70, ASTM A 516 Gr. 60, ASTM A 516 Gr. 70, ASTM A 515 Gr. 70, IS 2002 Gr. 1 and IS 2002 Gr. 2",
+    image: "BQ Plate.jpg"
   },
   {
     name: "TMT Bar",
     size: "8mm - 40mm",
     grade: "IS 1786 Fe 500 D, JSW TMT Plus Fe 500, JSW TMT Plus Fe 500 D",
+    image: "TMT Bar.avif"
   },
   {
     name: "Chequered Coils/Plates",
@@ -65,12 +76,14 @@ const products = [
     width: "900mm - 1500mm",
     length: "As per customer's requirement",
     grade: "IS: 3502 Fe410",
+    image: "chequered 1.jpg"
   },
   {
     name: "C-45 Plates",
     thickness: "16mm to 180mm",
     width: "1250mm to 2000mm",
     length: "1mtr. to 10mtr",
+    image: "C-45 Plates.jpg"
   },
 ];
 
@@ -153,9 +166,11 @@ const ProductPage = () => {
                 key={index}
                 className="flex items-center bg-white shadow rounded-md p-4"
               >
-                <img
-                  src={`https://via.placeholder.com/150`}
+                <Image
+                  src={product.image ? `/products/${product.image}` : "https://via.placeholder.com/150"}
                   alt={product.name}
+                  width={160}
+                  height={160}
                   className="w-40 h-40 object-cover rounded-md mr-4"
                 />
                 <div className="flex-grow">
