@@ -2,10 +2,11 @@
 import logo from "@/../public/images/logo.png";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import styles from './NavBar.module.scss'; // Import the corresponding SCSS file
 
 const data = [
-  { title: "Home", link: '/', class: "active" },
   { title: "Services", link: '/services' },
   { title: "Contact Us", link: '/contact-us' },
   { title: "Products", link: '/products' },
@@ -13,62 +14,67 @@ const data = [
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src={logo} alt="Logo" className="w-[50px]" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+    <nav className={`${styles.navbar} bg-white dark:bg-gray-900`}>
+      <div className="container mx-auto flex items-center justify-between p-4">
+        {/* Logo Section */}
+        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Image src={logo} alt="Logo" className="w-10 h-10" />
+          <span className="text-2xl font-bold tracking-wide dark:text-white">
             R J Enterprise
           </span>
-        </a>
+        </Link>
+
         {/* Mobile Hamburger Button */}
         <button
           onClick={toggleMenu}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center justify-center p-2 text-gray-500 rounded-md md:hidden hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none"
           aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation"
         >
-          <span className="sr-only">Open main menu</span>
           <svg
-            className="w-5 h-5"
-            aria-hidden="true"
+            className="w-6 h-6"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 17 14"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
           >
             <path
-              stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 1h15M1 7h15M1 13h15"
+              d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
             />
           </svg>
         </button>
+
         {/* Mobile Sliding Menu */}
         <div
-          className={`fixed top-0 right-0 h-full bg-gray-50 dark:bg-gray-800 z-50 transform ${
+          className={`fixed inset-y-0 right-0 w-64 bg-white dark:bg-gray-800 shadow-lg transform ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 w-64 md:hidden`}
+          } transition-transform duration-300 md:hidden`}
         >
-          <button
-            onClick={toggleMenu}
-            className="p-4 text-gray-500 dark:text-gray-400"
-          >
-            Close
-          </button>
-          <ul className="flex flex-col font-medium p-4 space-y-4">
+          <div className="flex items-center justify-between p-4 border-b dark:border-gray-700">
+            <span className="text-lg font-semibold dark:text-white">Menu</span>
+            <button onClick={toggleMenu} className="text-gray-500 dark:text-gray-400">
+              Close
+            </button>
+          </div>
+          <ul className="flex flex-col p-4 space-y-4">
             {data.map((item) => (
               <li key={item.link}>
                 <Link
                   href={item.link}
-                  className="block py-2 px-3 text-gray-800 bg-blue-100 rounded dark:text-white dark:bg-blue-700"
+                  className={`block py-2 px-4 rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white dark:text-gray-300 dark:hover:bg-blue-600 ${
+                    pathname === item.link ? 'bg-blue-500 text-white dark:bg-blue-600' : ''
+                  }`}
+                  onClick={toggleMenu} // Close menu on selection
                 >
                   {item.title}
                 </Link>
@@ -76,21 +82,22 @@ function NavBar() {
             ))}
           </ul>
         </div>
+
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <ul className="flex flex-row font-medium space-x-6">
-            {data.map((item) => (
-              <li key={item.link}>
-                <Link
-                  href={item.link}
-                  className="block py-2 px-3 text-gray-800 hover:text-blue-700 rounded dark:text-white dark:hover:text-blue-500"
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="hidden md:flex items-center space-x-8">
+          {data.map((item) => (
+            <li key={item.link}>
+              <Link
+                href={item.link}
+                className={`text-gray-700 hover:text-blue-500 font-medium dark:text-gray-300 dark:hover:text-blue-400 transition-colors ${
+                  pathname === item.link ? 'text-blue-500 dark:text-blue-400 font-semibold' : ''
+                }`}
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
