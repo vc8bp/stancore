@@ -21,7 +21,7 @@ const AboutUs = () => {
                             <p>What sets us apart is our commitment to excellence at every step. Our team of experts ensures that every product we supply meets the highest industry standards, and our logistics team ensures timely and efficient delivery to locations both near and far.</p>
                             <p>R J Enterprise is not just a steel supplier, but a dedicated partner in your business success. Whether you are a large corporation or a small enterprise, we are here to provide you with the quality materials and exceptional service you need to thrive in today&apos;s compitative market.</p>
                             <button>
-                                <Link target='blank' className='button' href="https://www.stancor.in/profile">Know more</Link>
+                                <Link target='blank' className='button' href="/services">Know more</Link>
                             </button>
                         </div>
                         <div className={styles.imgWrapper}>

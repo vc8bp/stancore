@@ -7,35 +7,19 @@ import { GoMail } from "react-icons/go";
 import { MdCall } from "react-icons/md";
 import img1 from './(image)/sectigo_trust_seal_lg_140x54.png';
 import styles from './Footer.module.scss';
+import logo from "@/../public/images/logo.png";
 
 
 const footerData = [
     {
-        title: 'About Company',
+        title: 'Important Links',
         links: [
-            { title: 'Company Profile', link: "https://www.stancor.in/quality-policy" },
-            { title: 'Mission', link: "https://www.stancor.in/our-mission", },
-            { title: 'Vision', link: "https://www.stancor.in/our-mission", },
-            { title: 'Quality Policy', link: "https://www.stancor.in/shop" },
+            { title: 'Home', link: "/", },
+            { title: 'Services', link: "/services" },
+            { title: 'Contact-us', link: "/contact-us", },
+            { title: 'Products', link: "/products" },
         ]
     },
-    {
-        title: 'Products & Services',
-        links: [
-            { title: 'Steel & Commodities', link: "https://www.stancor.in/sales", },
-            { title: 'Manufacturing', link: "https://www.stancor.in/logistics", },
-            { title: 'Services', link: "https://www.stancor.in/technical", },
-        ]
-    },
-    {
-        title: 'Contacts',
-        links: [
-            { title: 'Sales & Exports', link: "https://www.stancor.in/sales", },
-            { title: 'Technical & Quality Control', link: "https://www.stancor.in/logistics", },
-            { title: 'Shipping & Logistics', link: "https://www.stancor.in/technical", },
-        ]
-    },
-
 ];
 
 const socialicons = [
@@ -52,35 +36,14 @@ const Footer = () => {
         <div className={styles.footerSection}>
             <div className="ccontainer">
                 <div className={styles.footerContnet}>
-                    <div className={styles.infoSection}>
-                        <div className={styles.googlemap}>
-                            <iframe
-                                src="https://maps.google.com/maps?q=Mahatma Gandhi Memorial Building, Bldg No 7, Netaji Subhash Road, Near Kaivalyadham, 3rd Floor,Charni Road, Mumbai 400002 Maharashtra India &width=100%&hl=en&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                                width="600"
-                                height="450"
-                                frameborder="0"
-                                style={{ border: 0 }}
-                                allowfullscreen=""
-                                aria-hidden="false"
-                                tabindex="0"
-                            />
-                        </div>
-                        <p><span><MdCall /></span> +912265271000</p>
-                        <p>
-                            <span><GoMail /></span>
-                            <Link href="mailto:info@stancor.in">info@stancor.in</Link>
-                        </p>
-                        <div className={styles.socialLinks}>
-                            {socialicons.map(item => {
-                                return <Link key={item.link} href={item.link} target="_blank"><span>{item.icon}</span></Link>
-                            })}
+                <div className={styles.rightSection}>
+                        <div className='flex gap-2 object-center content-center' >
+                        <Image src={logo} alt="Logo" className="w-16     h-16 " />
+                       
+                        <p className='text-balance' >R J Enterprise, with over 20 years of expertise, specializes in high-quality steel trading for industries like construction, Oil & Gas, and manufacturing. We source premium materials globally, ensuring quality, reliability, and timely delivery, making us a trusted partner in your success.</p>
                         </div>
                     </div>
                     <div className={styles.midSection}>
-                        <div className={styles.searchSection}>
-                            <input type="text" placeholder='Search...' />
-                            <button className='button'><FaSearch /></button>
-                        </div>
                         <div className={styles.linkSection}>
                             {footerData.map((section, index) => {
                                 return < div key={index} >
@@ -107,18 +70,26 @@ const Footer = () => {
                         </div>
 
                     </div>
-                    <div className={styles.rightSection}>
-                        <h3>Newsletter Signup :</h3>
-                        <div>
-                            <input type="text" placeholder='Your mail...' />
-                            <button className='button'>Subscribe</button>
+                    <div className={styles.infoSection}>
+
+                        <p><span><MdCall /></span> +912265271000</p>
+                        <p>
+                            <span><GoMail /></span>
+                            <Link href="mailto:info@stancor.in">info@stancor.in</Link>
+                        </p>
+                        <div className={styles.socialLinks}>
+                            {socialicons.map(item => {
+                                return <Link key={item.link} href={item.link} target="_blank"><span>{item.icon}</span></Link>
+                            })}
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
         <div className={styles.copyrightSection}>
-            <span>Copyright © Stancor Alloys Private Limited</span>
+            <span>Copyright © RJ Enterprice</span>
         </div>
         </div>
     )

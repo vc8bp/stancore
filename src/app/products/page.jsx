@@ -9,7 +9,7 @@ const products = [
     name: "Flats",
     sizes: "12x3mm - 300x25mm",
     grade: "Mild Steel",
-    image: ["steel-flat-500x500.webp"]
+    image: ["steel-flat-500x500.webp", "Flats.jpg"]
   },
   {
     name: "Plates",
@@ -17,25 +17,25 @@ const products = [
     width: "1250mm to 3000mm",
     length: "1mtr. to 12.5mtr.",
     grades: "All grades available as per customer's requirement",
-    image: ["wall-form-shuttering-plate-500x500.webp"]
+    image: [ "Plate.jpg"]
   },
   {
     name: "Angle",
     sizes: "25x25x3mm - 150x150x20mm",
     grade: "Mild Steel",
-    image: ["shopping.webp"]
+    image: ["shopping.webp", "angel.jpg", "angel2.jpg", "angel3.webp"]
   },
   {
     name: "Channel",
     sizes: "75x40mm - 400x200mm",
     grade: "Mild Steel",
-    image: ["channel 3.jpg"],
+    image: ["channel 3.jpg", "channel 2.jpg", "channel.jpg"],
   },
   {
     name: "Beam",
     sizes: "100x50mm - 600x200mm",
     grade: "Mild Steel",
-    image: ["Mild-Steel-I-Beam-1.jpg"]
+    image: ["Mild-Steel-I-Beam-1.jpg", "beam 2.jpg", "beam 3.jpg", "beam.jpg"]
   },
   {
     name: "Round Bar",
@@ -48,7 +48,7 @@ const products = [
     name: "Square Bar",
     sizes: "10mm - 50mm",
     grade: "Mild Steel",
-    image: ["Square Bar.webp"]
+    image: ["Square Bar.webp", "Square bar2.jpg"]
   },
   {
     name: "Mild Hot HR Coil",
@@ -70,7 +70,7 @@ const products = [
     name: "TMT Bar",
     size: "8mm - 40mm",
     grade: "IS 1786 Fe 500 D, JSW TMT Plus Fe 500, JSW TMT Plus Fe 500 D",
-    image: ["TMT Bar.avif"]
+    image: ["TMT Bar.avif", "TMT Bar 1.jpg"]
   },
   {
     name: "Chequered Coils/Plates",
@@ -140,71 +140,71 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <div className="flex">
-        {/* Filters */}
-        <div className="w-1/4 bg-white shadow p-4 rounded-md">
-          <h2 className="font-semibold text-lg mb-4">Filters</h2>
-          {['sizes', 'grade', 'thickness', 'width', 'length'].map((attribute) => (
-            <div className="mb-4" key={attribute}>
-              <h3 className="font-medium mb-2 capitalize">{attribute}</h3>
-              <select
-                className="w-full border border-gray-300 rounded-md p-2"
-                onChange={(e) => handleFilterChange(attribute, e.target.value)}
-              >
-                <option value="">All</option>
-                {getFilterOptions(products, attribute).map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
+      <div className="flex flex-col lg:flex-row">
+  {/* Filters */}
+  <div className="w-full lg:w-1/4 bg-white shadow p-4 rounded-md">
+    <h2 className="font-semibold text-lg mb-4">Filters</h2>
+    {['sizes', 'grade', 'thickness', 'width', 'length'].map((attribute) => (
+      <div className="mb-4" key={attribute}>
+        <h3 className="font-medium mb-2 capitalize">{attribute}</h3>
+        <select
+          className="w-full border border-gray-300 rounded-md p-2"
+          onChange={(e) => handleFilterChange(attribute, e.target.value)}
+        >
+          <option value="">All</option>
+          {getFilterOptions(products, attribute).map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
           ))}
-        </div>
+        </select>
+      </div>
+    ))}
+  </div>
 
-        {/* Products List */}
-        <div className="w-3/4 ml-8">
-          <div className="grid grid-cols-1 gap-6">
-            {filteredProducts.map((product, index) => (
-              <div
-                key={index}
-                style={{transition: "all 0.3s ease-in-out"}}
-                onClick={() => setSelectedProduct(product)}
-                className="flex items-center bg-white shadow rounded-md p-4 cursor-pointer hover:scale-[1.02] shadow-xl "
-              >
-                <Image
-                  src={product.image.length ? `/products/${product.image[0]}` : "https://via.placeholder.com/150"}
-                  alt={product.name}
-                  width={160}
-                  height={160}
-                  className="w-40 h-40 object-cover rounded-md mr-4"
-                />
-                <div className="flex-grow">
-                  <h3 className="font-medium">{product.name}</h3>
-                  <ul className="text-gray-500">
-                    {Object.keys(product).map(
-                      (key) =>
-                        key !== "name" && (
-                          <li key={key} className="whitespace-pre-wrap">
-                            <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {product[key]}
-                          </li>
-                        )
-                    )}
-                  </ul>
-                </div>
-              </div>
-            ))}
+  {/* Products List */}
+  <div className="w-full lg:w-3/4 lg:ml-8 mt-8 lg:mt-0">
+    <div className="grid grid-cols-1 gap-6">
+      {filteredProducts.map((product, index) => (
+        <div
+          key={index}
+          style={{ transition: "all 0.3s ease-in-out" }}
+          onClick={() => setSelectedProduct(product)}
+          className="flex items-center bg-white shadow rounded-md p-4 cursor-pointer hover:scale-[1.02] shadow-xl"
+        >
+          <Image
+            src={product.image.length ? `/products/${product.image[0]}` : "https://via.placeholder.com/150"}
+            alt={product.name}
+            width={160}
+            height={160}
+            className="w-40 h-40 object-cover rounded-md mr-4"
+          />
+          <div className="flex-grow">
+            <h3 className="font-medium">{product.name}</h3>
+            <ul className="text-gray-500">
+              {Object.keys(product).map(
+                (key) =>
+                  key !== "name" && (
+                    <li key={key} className="whitespace-pre-wrap">
+                      <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {product[key]}
+                    </li>
+                  )
+              )}
+            </ul>
           </div>
         </div>
-
+      ))}
+    </div>
+  </div>
+</div>
 
         {selectedProduct && (
-        <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-          <DialogContent>
+        <Dialog  open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)} >
+          <DialogContent className="w-full max-w-[90%] overflow-auto ">
             <DialogHeader>
               <DialogTitle>{selectedProduct.name}</DialogTitle>
             </DialogHeader>
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex  items-center justify-center flex-wrap gap-3">
               {selectedProduct.image.map(i => (
                 <Image
                 src={`/products/${i}`}
@@ -218,7 +218,6 @@ const ProductPage = () => {
           </DialogContent>
         </Dialog>
       )}
-      </div>
     </div>
   );
 };

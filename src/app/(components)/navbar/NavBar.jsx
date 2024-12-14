@@ -71,9 +71,8 @@ function NavBar() {
               <li key={item.link}>
                 <Link
                   href={item.link}
-                  className={`block py-2 px-4 rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white dark:text-gray-300 dark:hover:bg-blue-600 ${
-                    pathname === item.link ? 'bg-blue-500 text-white dark:bg-blue-600' : ''
-                  }`}
+                  className={`block py-2 px-4 rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white dark:text-gray-300 dark:hover:bg-blue-600 `}
+                  style={ pathname === item.link ? { color : "var(--color)"} : {}}
                   onClick={toggleMenu} // Close menu on selection
                 >
                   {item.title}
@@ -89,9 +88,8 @@ function NavBar() {
             <li key={item.link}>
               <Link
                 href={item.link}
-                className={`text-gray-700 hover:text-blue-500 font-medium dark:text-gray-300 dark:hover:text-blue-400 transition-colors ${
-                  pathname === item.link ? 'text-blue-500 dark:text-blue-400 font-semibold' : ''
-                }`}
+                style={ pathname === item.link ? { color : "var(--db)"} : {}}
+                className={`text-gray-700 hover:text-blue-500 font-medium dark:text-gray-300 dark:hover:text-blue-400 transition-colors `}
               >
                 {item.title}
               </Link>
