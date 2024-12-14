@@ -1,13 +1,15 @@
 "use client"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Image from "next/image";
 import React, { useState } from "react";
+import { VscEye } from "react-icons/vsc";
 
 const products = [
   {
     name: "Flats",
     sizes: "12x3mm - 300x25mm",
     grade: "Mild Steel",
-    image: "steel-flat-500x500.webp"
+    image: ["steel-flat-500x500.webp"]
   },
   {
     name: "Plates",
@@ -15,38 +17,38 @@ const products = [
     width: "1250mm to 3000mm",
     length: "1mtr. to 12.5mtr.",
     grades: "All grades available as per customer's requirement",
-    image: "wall-form-shuttering-plate-500x500.webp"
+    image: ["wall-form-shuttering-plate-500x500.webp"]
   },
   {
     name: "Angle",
     sizes: "25x25x3mm - 150x150x20mm",
     grade: "Mild Steel",
-    image: "shopping.webp"
+    image: ["shopping.webp"]
   },
   {
     name: "Channel",
     sizes: "75x40mm - 400x200mm",
     grade: "Mild Steel",
-    image: "channel 3.jpg",
+    image: ["channel 3.jpg"],
   },
   {
     name: "Beam",
     sizes: "100x50mm - 600x200mm",
     grade: "Mild Steel",
-    image: "Mild-Steel-I-Beam-1.jpg"
+    image: ["Mild-Steel-I-Beam-1.jpg"]
   },
   {
     name: "Round Bar",
     use: "Used for re-rolling into long products, such as deformed bars, angles and profiles.",
     size: "65mm - 150mm",
     grade: "All grades of Carbon and Alloy Mild Steel",
-    image: "Round Bar.jpg"
+    image: ["Round Bar.jpg"]
   },
   {
     name: "Square Bar",
     sizes: "10mm - 50mm",
     grade: "Mild Steel",
-    image: "Square Bar.webp"
+    image: ["Square Bar.webp"]
   },
   {
     name: "Mild Hot HR Coil",
@@ -54,7 +56,7 @@ const products = [
     width: "900mm to 2000mm",
     length: "As per customer's requirement",
     grades: "All grades available as per customer's requirement",
-    image: "hr coil.jpg"
+    image: ["hr coil.jpg"]
   },
   {
     name: "BQ Plate",
@@ -62,13 +64,13 @@ const products = [
     width: "1250mm to 2500mm",
     length: "5mtr. to 12mtr.",
     grade: "SA 516 Gr. 60, SA 516 Gr. 70, ASTM A 516 Gr. 60, ASTM A 516 Gr. 70, ASTM A 515 Gr. 70, IS 2002 Gr. 1 and IS 2002 Gr. 2",
-    image: "BQ Plate.jpg"
+    image: ["BQ Plate.jpg"]
   },
   {
     name: "TMT Bar",
     size: "8mm - 40mm",
     grade: "IS 1786 Fe 500 D, JSW TMT Plus Fe 500, JSW TMT Plus Fe 500 D",
-    image: "TMT Bar.avif"
+    image: ["TMT Bar.avif"]
   },
   {
     name: "Chequered Coils/Plates",
@@ -76,14 +78,14 @@ const products = [
     width: "900mm - 1500mm",
     length: "As per customer's requirement",
     grade: "IS: 3502 Fe410",
-    image: "chequered 1.jpg"
+    image: ["chequered 1.jpg"]
   },
   {
     name: "C-45 Plates",
     thickness: "16mm to 180mm",
     width: "1250mm to 2000mm",
     length: "1mtr. to 10mtr",
-    image: "C-45 Plates.jpg"
+    image: ["C-45 Plates.jpg"]
   },
 ];
 
@@ -98,8 +100,10 @@ const getFilterOptions = (products, attribute) => {
 };
 
 const ProductPage = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [filters, setFilters] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
+
 
   const handleFilterChange = (attribute, value) => {
     setFilters({ ...filters, [attribute]: value });
@@ -164,10 +168,12 @@ const ProductPage = () => {
             {filteredProducts.map((product, index) => (
               <div
                 key={index}
-                className="flex items-center bg-white shadow rounded-md p-4"
+                style={{transition: "all 0.3s ease-in-out"}}
+                onClick={() => setSelectedProduct(product)}
+                className="flex items-center bg-white shadow rounded-md p-4 cursor-pointer hover:scale-[1.02] shadow-xl "
               >
                 <Image
-                  src={product.image ? `/products/${product.image}` : "https://via.placeholder.com/150"}
+                  src={product.image.length ? `/products/${product.image[0]}` : "https://via.placeholder.com/150"}
                   alt={product.name}
                   width={160}
                   height={160}
@@ -186,27 +192,32 @@ const ProductPage = () => {
                     )}
                   </ul>
                 </div>
-                <div className="flex space-x-2">
-                  <button className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <span className="sr-only">View</span>
-                    👁️
-                  </button>
-                  <button className="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <span className="sr-only">Compare</span>
-                    =
-                  </button>
-                </div>
               </div>
             ))}
           </div>
-
-          {/* Compare Button */}
-          <div className="mt-6">
-            <button className="px-4 py-2 bg-red-600 text-white rounded-md">
-              Compare
-            </button>
-          </div>
         </div>
+
+
+        {selectedProduct && (
+        <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{selectedProduct.name}</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col items-center justify-center">
+              {selectedProduct.image.map(i => (
+                <Image
+                src={`/products/${i}`}
+                alt={selectedProduct.name}
+                width={300}
+                height={300}
+                className="rounded-md object-cover"
+              />
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
       </div>
     </div>
   );

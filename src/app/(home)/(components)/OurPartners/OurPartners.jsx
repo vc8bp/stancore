@@ -5,28 +5,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import img1 from '../../(images)/partner-logo.png'
+import img1 from '../../(images)/p1.png'
+import img2 from '../../(images)/p2.png'
+import img3 from '../../(images)/p3.jpg'
+import img4 from '../../(images)/p4.png'
+import img5 from '../../(images)/p5.png'
+import img7 from '../../(images)/p7.png'
+import img0 from '../../(images)/p0.png'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './OurPartners.module.scss'
 
 const data = [
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
-  { image: img1, url: 'https://www.stancor.in/brand/am-ns-india-1' },
+  { image: img0 }, { image: img1 }, { image: img2 },{ image: img3 },  { image: img4 }, { image: img5 },  { image: img7 },
 ]
 
 const OurPartners = () => {
   return (
     <div className={`our-partners-section ${styles.mainSection}`}>
       <div className="ccontainer">
-        <h1 className="title">Our Partners</h1>
+        <h1 className="title">Our Product</h1>
         <div className={styles.container}>
           <Swiper
             navigation
@@ -42,9 +41,7 @@ const OurPartners = () => {
             {data.map((e) => {
               return (
                 <SwiperSlide key={e.url} >
-                  <Link href={e.url} target='blank'>
                     <Image src={e.image} alt="img" />
-                  </Link>
                 </SwiperSlide>
               )
             })}
