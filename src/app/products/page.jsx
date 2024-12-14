@@ -207,6 +207,7 @@ const ProductPage = () => {
             <div className="flex  items-center justify-center flex-wrap gap-3">
               {selectedProduct.image.map(i => (
                 <Image
+                key={i}
                 src={`/products/${i}`}
                 alt={selectedProduct.name}
                 width={300}
