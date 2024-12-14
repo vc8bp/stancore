@@ -5,7 +5,6 @@ import { FaFacebookSquare, FaInstagram, FaLinkedinIn, FaSearch, FaYoutube } from
 import { FaXTwitter } from "react-icons/fa6";
 import { GoMail } from "react-icons/go";
 import { MdCall } from "react-icons/md";
-import img1 from './(image)/sectigo_trust_seal_lg_140x54.png';
 import styles from './Footer.module.scss';
 import logo from "@/../public/images/logo.png";
 
@@ -64,9 +63,6 @@ const Footer = () => {
                                     </ul>
                                 </div>
                             })}
-                        </div>
-                        <div className={styles.logo}>
-                            <Image src={img1} alt='sectigo_trust_seal'></Image>
                         </div>
 
                     </div>

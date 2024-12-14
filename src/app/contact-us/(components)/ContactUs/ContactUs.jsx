@@ -6,77 +6,46 @@ import { SlMap } from "react-icons/sl";
 import { GrMail } from "react-icons/gr";
 import Form from './Form';
 
-
 const topdata = [
     {
-        title: 'Domestic Sales',
+        title: 'Domestic Sales & Marketing',
         desc: 'Helping our customers drive sales growth is our priority and our specialty. Our team of dedicated professionals work with you to create high-impact campaigns that fit your business goals by providing stellar service and creative solutions.',
         button: 'Domestic Sales & Marketing Team ',
-        url: 'https://www.stancor.in/sales'
-    },
-    // {
-    //     title: 'Shipping & Logistics',
-    //     desc: 'Our Logistics Team is a Dedicated Division for Handling all Logistics related work combining value-added and management services with traditional fulfillment and distribution, our customized, integrated logistics solutions drive efficiency, improve quality and create competitive advantage.',
-    //     button: 'Shipping & Logistics Team',
-    //     url: 'https://www.stancor.in/logistics'
-    // },
-    {
-        title: 'Export Sales',
-        desc: "Stancor Group's Export Sales & Marketing is responsible of Developing and executing marketing campaigns and promotions to drive sales and brand awareness. Monitor and analyze market trends and competition to inform product development and pricing strategies.",
-        button: 'Export Sales & Marketing Team',
-        url: 'https://www.stancor.in/technical'
+        name: "R. Jadhav",
+        number: "+91 8828403987",
+        email: "sales@rjenterpriseinfo.com"
     },
 ]
-
-const features = [
-    {
-        title: 'Stancor Alloys Private Limited (Head Office)',
-        url: 'https://www.stancor.in/contact-us#',
-        address:
-            <>
-                Mahatma Gandhi Memorial Building, 3rd Floor <br />
-                Next to Kaivalyadham, Before Catholic Gymkhana <br />
-                Marine Drive, Mumbai - 400 002. <br />
-                Maharashtra, India <br />
-                Office Board Line: +91 22 35071030 (30 Lines) <br />
-                Helpline / Customer Service: +91 22 49163016 <br />
-            </>
-    },
-    {
-        title: 'Stancor Alloys Private Limited (Warehouse)',
-        address:
-            <>
-                CMR Industrial Park <br />
-                Plot No. A, Survey No. 87/3, 93/1, 2 & 3, <br />
-                Behind Kingfisher Breweries, Near Enkay Garden, <br />
-                Taloja Midc, Village – Vavanje, Dist. Raigad <br />
-                Works Board Line: +91 22 48964066 <br />
-            </>
-    },
-]
-
 
 const ContactUs = () => {
     return (
         <div className={styles.contactSection}>
             <div className="ccontainer">
-                <div className={styles.topSection}>
-                    {topdata.map((e) => {
-                        return (
-                            <div key={e.title}>
-                                <h2 className="title">{e.title}</h2>
-                                <p>{e.desc}</p>
-                                <Link className='button' href={e.url} target='blank'>{e.button}</Link>
-                            </div>
-                        )
-                    })}
-                </div>
+
 
                 <div className={styles.bottomSection}>
-                    <div className={styles.leftSection}>
-                        <Form/>
+
+                    <div className={styles.topSection}>
+                        {topdata.map((e) => {
+                            return (
+                                <div key={e.title} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">{e.title}</h2>
+                                    <p className="text-gray-600 mb-4">{e.desc}</p>
+
+                                    <div className="mt-4 border-t border-gray-200 pt-4">
+                                        <p className="text-gray-800 font-medium">{e.name}</p>
+                                        <p className="text-gray-500">{e.email}</p>
+                                        <p className="text-gray-500">{e.number}</p>
+                                    </div>
+                                </div>
+
+                            )
+                        })}
                     </div>
-                    <div className={styles.rightSection}>
+                    <div className={styles.leftSection}>
+                        <Form />
+                    </div>
+                    {/* <div className={styles.rightSection}>
                         <h2 className="title">Contact info</h2>
                         <h3 className='title'>Stancor Alloys Private Limited</h3>
                         <div className={styles.address}>
@@ -104,7 +73,7 @@ const ContactUs = () => {
                                 <p>Export Sales: sales.export@stancor.in</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

@@ -25,7 +25,7 @@ function NavBar() {
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo Section */}
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <Image src={logo} alt="Logo" className="w-10 h-10" />
+          <Image src={logo} alt="Logo" className="w-14 h-14" />
           <span className="text-2xl font-bold tracking-wide dark:text-white">
             R J Enterprise
           </span>

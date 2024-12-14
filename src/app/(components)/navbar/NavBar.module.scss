@@ -3,6 +3,14 @@
   top: 0;
   z-index: 50;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Kodchasan", sans-serif;
+  border-bottom: 1px solid var(--db);
+
+
+  span{
+    color: var(--db);
+    font-size: 1.5rem;
+  }
 }
 
 .container {
