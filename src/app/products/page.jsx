@@ -1,10 +1,11 @@
 "use client"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
 import { VscEye } from "react-icons/vsc";
 
-const products = [
+export const products = [
   {
     name: "Flats",
     sizes: "12x3mm - 300x25mm",
@@ -17,13 +18,13 @@ const products = [
     width: "1250mm to 3000mm",
     length: "1mtr. to 12.5mtr.",
     grades: "All grades available as per customer's requirement",
-    image: [ "Plate.jpg"]
+    image: ["Plate.jpg"]
   },
   {
     name: "Angle",
     sizes: "25x25x3mm - 150x150x20mm",
     grade: "Mild Steel",
-    image: ["shopping.webp", "angel.jpg", "angel2.jpg", "angel3.webp"]
+    image: ["shopping.webp", "angel.jpg", "angel3.webp"]
   },
   {
     name: "Channel",
@@ -35,7 +36,7 @@ const products = [
     name: "Beam",
     sizes: "100x50mm - 600x200mm",
     grade: "Mild Steel",
-    image: ["Mild-Steel-I-Beam-1.jpg", "beam 2.jpg", "beam 3.jpg", "beam.jpg"]
+    image: ["beam.jpg", "beam 2.jpg", "beam 3.jpg"]
   },
   {
     name: "Round Bar",
@@ -122,17 +123,15 @@ const ProductPage = () => {
   });
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      {/* Search Bar */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold mb-2">Search for a product</h1>
-        <p className="text-gray-600 mb-4">
-          We have amazing products in our portfolio, check them now!
-        </p>
-        <div className="flex items-center bg-white shadow rounded-md overflow-hidden">
+    <div className="p-8 bg-gradient-to-br from-white to-gray-200 min-h-screen">
+      {/* Search Section */}
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl font-bold mb-2 text-[var(--db)]">Find the Perfect Product</h1>
+        <p className="text-gray-600 mb-4">Explore our portfolio for the best products tailored to your needs.</p>
+        <div className="flex items-center justify-center bg-white shadow-md rounded-full overflow-hidden w-full max-w-xl mx-auto">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search products..."
             className="flex-grow px-4 py-2 text-gray-700 focus:outline-none"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -140,81 +139,95 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row">
-  {/* Filters */}
-  <div className="w-full lg:w-1/4 bg-white shadow p-4 rounded-md">
-    <h2 className="font-semibold text-lg mb-4">Filters</h2>
-    {['sizes', 'grade', 'thickness', 'width', 'length'].map((attribute) => (
-      <div className="mb-4" key={attribute}>
-        <h3 className="font-medium mb-2 capitalize">{attribute}</h3>
-        <select
-          className="w-full border border-gray-300 rounded-md p-2"
-          onChange={(e) => handleFilterChange(attribute, e.target.value)}
-        >
-          <option value="">All</option>
-          {getFilterOptions(products, attribute).map((option, index) => (
-            <option key={index} value={option}>
-              {option}
-            </option>
+      {/* Main Content */}
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Filter Section */}
+        <div className="w-full lg:w-1/4 bg-white shadow-lg rounded-lg p-6">
+          <h2 className="text-xl font-bold mb-4 text-[var(--db)]">Filters</h2>
+          {["sizes", "grade", "thickness", "width", "length"].map((attribute) => (
+            <div className="mb-4" key={attribute}>
+              <h3 className="font-medium mb-2 capitalize text-gray-700">{attribute}</h3>
+              <select
+                className="w-full border border-gray-300 rounded-md p-2 text-gray-600"
+                onChange={(e) => handleFilterChange(attribute, e.target.value)}
+              >
+                <option value="">All</option>
+                {getFilterOptions(products, attribute).map((option, index) => (
+                  <option key={index} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
           ))}
-        </select>
-      </div>
-    ))}
-  </div>
-
-  {/* Products List */}
-  <div className="w-full lg:w-3/4 lg:ml-8 mt-8 lg:mt-0">
-    <div className="grid grid-cols-1 gap-6">
-      {filteredProducts.map((product, index) => (
-        <div
-          key={index}
-          style={{ transition: "all 0.3s ease-in-out" }}
-          onClick={() => setSelectedProduct(product)}
-          className="flex items-center bg-white shadow rounded-md p-4 cursor-pointer hover:scale-[1.02] shadow-xl"
-        >
-          <Image
-            src={product.image.length ? `/products/${product.image[0]}` : "https://via.placeholder.com/150"}
-            alt={product.name}
-            width={160}
-            height={160}
-            className="w-40 h-40 object-cover rounded-md mr-4"
-          />
-          <div className="flex-grow">
-            <h3 className="font-medium">{product.name}</h3>
-            <ul className="text-gray-500">
-              {Object.keys(product).map(
-                (key) =>
-                  key !== "name" && (
-                    <li key={key} className="whitespace-pre-wrap">
-                      <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {product[key]}
-                    </li>
-                  )
-              )}
-            </ul>
-          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
 
-        {selectedProduct && (
-        <Dialog  open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)} >
-          <DialogContent className="w-full max-w-[90%] overflow-auto ">
-            <DialogHeader>
-              <DialogTitle>{selectedProduct.name}</DialogTitle>
-            </DialogHeader>
-            <div className="flex  items-center justify-center flex-wrap gap-3">
-              {selectedProduct.image.map(i => (
-                <Image
-                key={i}
-                src={`/products/${i}`}
-                alt={selectedProduct.name}
+        {/* Product Cards */}
+        <div className="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProducts.map((product, index) => (
+            <div
+              key={index}
+              style={{borderBottom: "7px solid var(--color)"}}
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+              onClick={() => setSelectedProduct(product)}
+            >
+              <Image
+                src={product.image.length ? `/products/${product.image[0]}` : "https://via.placeholder.com/150"}
+                alt={product.name}
                 width={300}
-                height={300}
-                className="rounded-md object-cover"
+                height={200}
+                className="w-full h-40 object-cover"
               />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-[var(--db)]">{product.name}</h3>
+                <ul className="text-gray-600 text-sm mt-2 space-y-1">
+                  {Object.keys(product).map(
+                    (key) =>
+                      key !== "name" &&
+                      key !== "image" && (
+                        <li key={key}>
+                          <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {product[key]}
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Modal Dialog */}
+      {selectedProduct && (
+        <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
+          <DialogContent className="w-full max-w-[90%] overflow-auto rounded-lg shadow-2xl bg-white">
+            <DialogHeader>
+              <DialogTitle className="text-[var(--db)] text-2xl font-bold">
+                {selectedProduct.name}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="flex items-center justify-center flex-wrap gap-4 mt-4">
+              {selectedProduct.image.map((i) => (
+                <Image
+                  key={i}
+                  src={`/products/${i}`}
+                  alt={selectedProduct.name}
+                  width={300}
+                  height={300}
+                  className="rounded-md object-cover shadow-md"
+                />
               ))}
+            </div>
+            <div className="flex justify-center mt-6">
+            <Button
+            style={{transition: "all 0.3s ease-in-out"}}
+      // onClick={onClick}
+      className={`px-6 py-3 bg-[var(--color)] text-white font-semibold rounded-md 
+                  shadow-lg hover:bg-[var(--db)] transition-transform transform hover:scale-105 
+                  hover:text-[var(--seccolor)] `}
+        >
+        Make an Inquiry
+        </Button>
             </div>
           </DialogContent>
         </Dialog>

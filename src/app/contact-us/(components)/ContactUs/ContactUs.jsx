@@ -21,10 +21,7 @@ const ContactUs = () => {
     return (
         <div className={styles.contactSection}>
             <div className="ccontainer">
-
-
                 <div className={styles.bottomSection}>
-
                     <div className={styles.topSection}>
                         {topdata.map((e) => {
                             return (
@@ -32,10 +29,10 @@ const ContactUs = () => {
                                     <h2 className="text-2xl font-semibold text-gray-800 mb-2">{e.title}</h2>
                                     <p className="text-gray-600 mb-4">{e.desc}</p>
 
-                                    <div className="mt-4 border-t border-gray-200 pt-4">
+                                    <div className="mt-4 border-t border-gray-200 pt-4 ">
                                         <p className="text-gray-800 font-medium">{e.name}</p>
-                                        <p className="text-gray-500">{e.email}</p>
-                                        <p className="text-gray-500">{e.number}</p>
+                                        <p className="text-gray-500 ">{e.email}</p>
+                                        <p className="text-gray-500 ">{e.number}</p>
                                     </div>
                                 </div>
 

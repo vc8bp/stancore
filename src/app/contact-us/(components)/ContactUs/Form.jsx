@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import styles from './ContactUs.module.scss'
 import { sendMail } from './sendMail';
+import { products } from '@/app/products/page';
 
 
 function Form() {
@@ -10,6 +11,8 @@ function Form() {
         name: "",
         email: "",
         message: "",
+        companyName: "",
+        product: ""
     });
     const [status, setStatus] = useState("");
 
@@ -22,14 +25,14 @@ function Form() {
         e.preventDefault();
         setStatus("Sending...");
         try {
-          await sendMail(formData); 
-          setStatus("Message sent successfully!");
-          setFormData({ name: "", email: "", message: "" }); 
+            await sendMail(formData);
+            setStatus("Message sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
         } catch (error) {
-          console.error(error);
-          setStatus("Failed to send message. Please try again later.");
+            console.error(error);
+            setStatus("Failed to send message. Please try again later.");
         }
-      };
+    };
 
     return (
         <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -50,6 +53,28 @@ function Form() {
                 onChange={handleChange}
                 required
             />
+            <input
+                type="text"
+                name="companyName"
+                placeholder="Your Company Name"
+                value={formData.companyName}
+                onChange={handleChange}
+                required
+            />
+
+            <select
+                name="product"
+                value={formData.product}
+                onChange={handleChange}
+                required
+            >
+                <option value="" disabled>Select a Product</option> {/* Placeholder option */}
+                {products.map((product) => (
+                    <option key={product.id} value={product.name}>
+                        {product.name}
+                    </option>
+                ))}
+            </select>
             <textarea
                 name="message"
                 placeholder="Your Message"

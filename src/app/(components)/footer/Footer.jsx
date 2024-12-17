@@ -22,11 +22,9 @@ const footerData = [
 ];
 
 const socialicons = [
-    { icon: <FaFacebookSquare />, link: 'https://www.facebook.com/stancoralloys/' },
-    { icon: <FaXTwitter />, link: 'https://twitter.com/stancoralloys' },
-    { icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
-    { icon: <FaYoutube />, link: 'https://www.youtube.com/stancoralloys/' },
-    { icon: <FaInstagram />, link: 'https://www.instagram.com/stancoralloys/"' },
+
+    // { icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    { icon: <Image src="/indiaMart.png" width={20} height={20} />, link: 'https://www.indiamart.com/r-j-enterprisevasaivirar/'}
 ]
 
 const Footer = () => {
@@ -68,10 +66,10 @@ const Footer = () => {
                     </div>
                     <div className={styles.infoSection}>
 
-                        <p><span><MdCall /></span> +912265271000</p>
+                        <p><span><MdCall /></span> +91 8828403987</p>
                         <p>
                             <span><GoMail /></span>
-                            <Link href="mailto:info@stancor.in">info@stancor.in</Link>
+                            <Link href="mailto:sales@rjenterpriseinfo.com">sales@rjenterpriseinfo.com</Link>
                         </p>
                         <div className={styles.socialLinks}>
                             {socialicons.map(item => {
