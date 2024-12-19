@@ -3,16 +3,17 @@ import React, { useState } from 'react'
 import styles from './ContactUs.module.scss'
 import { sendMail } from './sendMail';
 import { products } from '@/app/products/page';
+import { useParams, usePathname, useSearchParams } from 'next/navigation';
 
 
 function Form() {
-
+    const url = useSearchParams()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
         companyName: "",
-        product: ""
+        product: url.get("product") ?? ""
     });
     const [status, setStatus] = useState("");
 

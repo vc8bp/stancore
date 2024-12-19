@@ -7,7 +7,7 @@ const ConatctBanner = () => {
             <div className={`ccontainer ${styles.container}`}>
                 <div className={styles.content}>
                     <h1 className="title">Contact Us</h1>
-                    <p>Stancor Group&apos;s Head Office is Situated Right in the Heart of South Mumbai&apos;s Opera House. Our other office and factory locations are strategically chosen to cover the wide market base in India as well as Middle East and Europe.</p>
+                    <p>Reach out to R J Enterprise for all your steel trading needs. Whether you have questions, need a quote, or want to explore our product range, our team is here to assist you. Let us help drive your projects with quality and excellence!</p>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
 import { VscEye } from "react-icons/vsc";
+import Link from "next/link";
 
 export const products = [
   {
@@ -167,7 +168,7 @@ const ProductPage = () => {
           {filteredProducts.map((product, index) => (
             <div
               key={index}
-              style={{borderBottom: "7px solid var(--color)"}}
+              style={{ borderBottom: "7px solid var(--color)" }}
               className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               onClick={() => setSelectedProduct(product)}
             >
@@ -219,15 +220,18 @@ const ProductPage = () => {
               ))}
             </div>
             <div className="flex justify-center mt-6">
-            <Button
-            style={{transition: "all 0.3s ease-in-out"}}
-      // onClick={onClick}
-      className={`px-6 py-3 bg-[var(--color)] text-white font-semibold rounded-md 
+              <Link href={`/contact-us?product=${selectedProduct.name}`} >
+                <Button
+                  style={{ transition: "all 0.3s ease-in-out" }}
+                  // onClick={onClick}
+                  className={`px-6 py-3 bg-[var(--color)] text-white font-semibold rounded-md 
                   shadow-lg hover:bg-[var(--db)] transition-transform transform hover:scale-105 
                   hover:text-[var(--seccolor)] `}
-        >
-        Make an Inquiry
-        </Button>
+                >
+                  Make an Inquiry
+                </Button>
+              </Link>
+
             </div>
           </DialogContent>
         </Dialog>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './SpecialAbilites.module.scss'
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 
 const SpecialAbilites = () => {
@@ -16,6 +17,7 @@ const SpecialAbilites = () => {
                         <li>Our Quality of Products is Suitable to All Industries.</li>
                     </ul>
                 </div>
+                <Link target='__blank' href="/documents/R J ENTERPRISE ISO CERTIFICATE.pdf" >
                 <Button
                     style={{ transition: "all 0.3s ease-in-out" }}
                     // onClick={onClick}
@@ -25,6 +27,8 @@ const SpecialAbilites = () => {
                 >
                     view Certificate
                 </Button>
+                </Link>
+
             </div>
         </div>
     )

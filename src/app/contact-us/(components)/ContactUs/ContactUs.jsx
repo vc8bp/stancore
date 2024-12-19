@@ -26,7 +26,7 @@ const ContactUs = () => {
                         {topdata.map((e) => {
                             return (
                                 <div key={e.title} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">{e.title}</h2>
+                                    <h2 className="text-2xl font-semibold text-gray-800 mb-2 ">{e.title}</h2>
                                     <p className="text-gray-600 mb-4">{e.desc}</p>
 
                                     <div className="mt-4 border-t border-gray-200 pt-4 ">
@@ -34,14 +34,18 @@ const ContactUs = () => {
                                         <p className="text-gray-500 ">{e.email}</p>
                                         <p className="text-gray-500 ">{e.number}</p>
                                     </div>
-                                </div>
 
+                                    <p className="text-gray-800 font-medium mt-5 mb-2">Address</p>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.09559914972937!2d72.82717459941061!3d19.47583845708235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9ea0e04c819%3A0xb3f56f58729a1ca6!2sFRGG%2BCW7%2C%20Virar%20East%2C%20Virar%2C%20Maharashtra%20401303!5e0!3m2!1sen!2sin!4v1734617522855!5m2!1sen!2sin" width="100%" height="300px" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
                             )
                         })}
                     </div>
                     <div className={styles.leftSection}>
                         <Form />
                     </div>
+
+                    
                     {/* <div className={styles.rightSection}>
                         <h2 className="title">Contact info</h2>
                         <h3 className='title'>Stancor Alloys Private Limited</h3>

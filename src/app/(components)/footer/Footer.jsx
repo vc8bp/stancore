@@ -17,14 +17,17 @@ const footerData = [
             { title: 'Services', link: "/services" },
             { title: 'Contact-us', link: "/contact-us", },
             { title: 'Products', link: "/products" },
+            { title: 'Map', link: "https://maps.app.goo.gl/YBg5vXbGqUwNaYKx9"}
         ]
     },
 ];
 
 const socialicons = [
-
-    // { icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
-    { icon: <Image src="/indiaMart.png" width={20} height={20} />, link: 'https://www.indiamart.com/r-j-enterprisevasaivirar/'}
+    { icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    { icon: <FaFacebookSquare />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    { icon: <FaInstagram />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    // { icon: <FaSearch />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    // { icon: <Image src="/indiaMart.png" width={20} height={20} />, link: 'https://www.indiamart.com/r-j-enterprisevasaivirar/'}
 ]
 
 const Footer = () => {
