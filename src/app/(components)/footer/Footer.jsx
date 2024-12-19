@@ -75,8 +75,8 @@ const Footer = () => {
                             <Link href="mailto:sales@rjenterpriseinfo.com">sales@rjenterpriseinfo.com</Link>
                         </p>
                         <div className={styles.socialLinks}>
-                            {socialicons.map(item => {
-                                return <Link key={item.link} href={item.link} target="_blank"><span>{item.icon}</span></Link>
+                            {socialicons.map(({item, i}) => {
+                                return <Link key={`${item.link}-${i}`} href={item.link} target="_blank"><span>{item.icon}</span></Link>
                             })}
 
                         </div>
