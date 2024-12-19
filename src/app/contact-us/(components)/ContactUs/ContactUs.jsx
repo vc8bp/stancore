@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Link from 'next/link'
 import styles from './ContactUs.module.scss'
 import { FaAddressCard } from 'react-icons/fa'
@@ -42,7 +42,10 @@ const ContactUs = () => {
                         })}
                     </div>
                     <div className={styles.leftSection}>
-                        <Form />
+                        <Suspense fallback={"Loading....."} >
+
+                            <Form />
+                        </Suspense>
                     </div>
 
                     
