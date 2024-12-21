@@ -19,7 +19,7 @@ export const products = [
     width: "1250mm to 3000mm",
     length: "1mtr. to 12.5mtr.",
     grades: "All grades available as per customer's requirement",
-    image: ["Plate.jpg"]
+    image: ["Plate.jpg", "plate 1.jpg", "plate 2.jpg"]
   },
   {
     name: "Angle",
@@ -44,13 +44,13 @@ export const products = [
     use: "Used for re-rolling into long products, such as deformed bars, angles and profiles.",
     size: "65mm - 150mm",
     grade: "All grades of Carbon and Alloy Mild Steel",
-    image: ["Round Bar.jpg"]
+    image: [ "roiund bar.jpg", "round bar 2.jpg", "round bar 1.jpg",]
   },
   {
     name: "Square Bar",
     sizes: "10mm - 50mm",
     grade: "Mild Steel",
-    image: ["Square Bar.webp", "Square bar2.jpg"]
+    image: ["square bar.jpg","Square Bar.webp", "Square bar2.jpg"]
   },
   {
     name: "Mild Hot HR Coil",
@@ -58,7 +58,7 @@ export const products = [
     width: "900mm to 2000mm",
     length: "As per customer's requirement",
     grades: "All grades available as per customer's requirement",
-    image: ["hr coil.jpg"]
+    image: ["hr coil.jpg", "Hot rolled coil 2.jpg", "hr coil 3.jpg"]
   },
   {
     name: "BQ Plate",
@@ -72,7 +72,7 @@ export const products = [
     name: "TMT Bar",
     size: "8mm - 40mm",
     grade: "IS 1786 Fe 500 D, JSW TMT Plus Fe 500, JSW TMT Plus Fe 500 D",
-    image: ["TMT Bar.avif", "TMT Bar 1.jpg"]
+    image: ["TMT Bar 1.jpg","TMT Bar.avif"]
   },
   {
     name: "Chequered Coils/Plates",
@@ -80,7 +80,7 @@ export const products = [
     width: "900mm - 1500mm",
     length: "As per customer's requirement",
     grade: "IS: 3502 Fe410",
-    image: ["chequered 1.jpg"]
+    image: ["chequered 1.jpg", "Chequered 2.jpg", "Chequered 3.jpg"]
   },
   {
     name: "C-45 Plates",
@@ -215,7 +215,7 @@ const ProductPage = () => {
                   alt={selectedProduct.name}
                   width={300}
                   height={300}
-                  className="rounded-md object-cover shadow-md"
+                  className=" w-[300px] h-[300px] rounded-md object-cover shadow-md"
                 />
               ))}
             </div>

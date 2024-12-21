@@ -14,7 +14,6 @@ import img6 from '../../(images)/s6.jpg'
 import img7 from '../../(images)/s7.jpg'
 import img8 from '../../(images)/s8.jpg'
 import img9 from '../../(images)/s9.jpg'
-import img10 from '../../(images)/s10.webp'
 import styles from './Banner.module.scss'
 
 
@@ -61,10 +60,10 @@ const data = [
     "id": 9,
     "image": img9,
   },
-  {
-    "id": 10,
-    "image": img10,
-  },
+  // {
+  //   "id": 10,
+  //   "image": img10,
+  // },
 
 ]
 

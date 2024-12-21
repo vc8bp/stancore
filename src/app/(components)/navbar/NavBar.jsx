@@ -4,12 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import styles from './NavBar.module.scss'; // Import the corresponding SCSS file
+import styles from './NavBar.module.scss'; 
 
 const data = [
   { title: "Services", link: '/services' },
-  { title: "Contact Us", link: '/contact-us' },
   { title: "Products", link: '/products' },
+  { title: "Contact Us", link: '/contact-us' },
 ];
 
 function NavBar() {
