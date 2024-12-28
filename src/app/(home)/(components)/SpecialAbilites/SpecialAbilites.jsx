@@ -25,7 +25,7 @@ const SpecialAbilites = () => {
                   shadow-lg hover:bg-[var(--db)] transition-transform transform hover:scale-105 
                   hover:text-[var(--seccolor)] mt-4 `}
                 >
-                    view Certificate
+                    View Certificate
                 </Button>
                 </Link>
 
