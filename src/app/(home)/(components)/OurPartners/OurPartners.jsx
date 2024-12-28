@@ -12,7 +12,6 @@ import img5 from '../../(images)/p5.png'
 import img7 from '../../(images)/p7.png'
 import img0 from '../../(images)/p0.png'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import styles from './OurPartners.module.scss'
 
@@ -32,7 +31,7 @@ const OurPartners = () => {
             autoplay={true}
             loop={true}
             modules={[Autoplay, Navigation]}
-            slidesPerView={6} 
+            slidesPerView={5} 
             spaceBetween={10}
             speed={1000}
             className={styles.swiperConatiner}

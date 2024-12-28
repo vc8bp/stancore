@@ -23,10 +23,10 @@ const footerData = [
 ];
 
 const socialicons = [
-    { icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
-    { icon: <FaFacebookSquare />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
-    { icon: <FaInstagram />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
-    // { icon: <FaSearch />, link: 'https://www.linkedin.com/company/stancor-alloys-inc' },
+    { icon: <FaLinkedinIn />, link: "" },
+    { icon: <FaFacebookSquare />, link:  ""},
+    { icon: <FaInstagram />, link: "" },
+    // { icon: <FaSearch />, link:  },
     // { icon: <Image src="/indiaMart.png" width={20} height={20} />, link: 'https://www.indiamart.com/r-j-enterprisevasaivirar/'}
 ]
 
@@ -86,7 +86,7 @@ const Footer = () => {
             </div>
         </div>
         <div className={styles.copyrightSection}>
-            <span>Copyright © RJ Enterprice</span>
+            <span>Copyright © RJ Enterprise</span>
         </div>
         </div>
     )
