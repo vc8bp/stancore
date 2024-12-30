@@ -47,37 +47,6 @@ const ContactUs = () => {
                             <Form />
                         </Suspense>
                     </div>
-
-                    
-                    {/* <div className={styles.rightSection}>
-                        <h2 className="title">Contact info</h2>
-                        <h3 className='title'>Stancor Alloys Private Limited</h3>
-                        <div className={styles.address}>
-                            <div className={styles.icon}>
-                                <span ><FaAddressCard /></span>
-                            </div>
-                            <div>
-                                <h3>Head Office:</h3>
-                                <p>
-                                    Mahatma Gandhi Memorial Building, 3rd Floor <br />
-                                    Next to Kaivalyadham, Before Catholic Gymkhana <br />
-                                    Marine Drive, Mumbai - 400 002.  <br />
-                                    Maharashtra, India <br />
-                                    Office Board Line: +91 22 35071030 (30 Lines) <br />
-                                    Helpline / Customer Service: +91 22 49163016
-                                </p>
-                            </div>
-                        </div>
-                        <div className={styles.mailInfo}>
-                            <div className={styles.icon}>
-                                <span ><GrMail /></span>
-                            </div>
-                            <div>
-                                <p>Domestic Sales: sales.india@stancor.in</p>
-                                <p>Export Sales: sales.export@stancor.in</p>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
 

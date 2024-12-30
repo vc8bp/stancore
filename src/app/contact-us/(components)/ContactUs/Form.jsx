@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import styles from './ContactUs.module.scss'
 import { sendMail } from './sendMail';
-import { products } from '@/app/products/page';
+import { products } from '@/app/products/Products';
 import { useParams, usePathname, useSearchParams } from 'next/navigation';
 
 

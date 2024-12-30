@@ -8,7 +8,7 @@ import Image from 'next/image'
 const commoditiesData = [
   {
     title: "Stock & Distribution",
-    desc: "Stancor is the Biggest Stockholder in India having more than 25000 Metric Tones of Inventory ready to ship all over the world as per Customer Requirements",
+    desc: "RJ Enterprise is the Biggest Stockholder in India having more than 25000 Metric Tones of Inventory ready to ship all over the world as per Customer Requirements",
     img: stockImg
   },
   {
@@ -18,7 +18,7 @@ const commoditiesData = [
   },
   {
     title: "Trading",
-    desc: "We Call it as Advance Trading Which Involves Buying Goods from World Class Mills in Bulk Quantities and Passing on the Benefits of Pricing to the Customers. All Materials Procured from the Mills are Internally Re-Tested Again at Stancor's Lab Facilities.",
+    desc: "We Call it as Advance Trading Which Involves Buying Goods from World Class Mills in Bulk Quantities and Passing on the Benefits of Pricing to the Customers. All Materials Procured from the Mills are Internally Re-Tested Again at RJ Enterprise's Lab Facilities.",
     img: tradingImg
   },
  

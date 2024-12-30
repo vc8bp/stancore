@@ -3,7 +3,7 @@ import Link from 'next/link'
 import aboutimg from '../../(images)/about-us.jpg'
 import styles from './AboutUs.module.scss'
 
-//main 
+
 
 
 const AboutUs = () => {
