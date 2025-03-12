@@ -1,4 +1,3 @@
-"use server"
 import ProductPage from "./Products";
 
 export const metadata = {

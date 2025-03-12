@@ -3,7 +3,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
-import { VscEye } from "react-icons/vsc";
 import Link from "next/link";
 
 export const products = [
